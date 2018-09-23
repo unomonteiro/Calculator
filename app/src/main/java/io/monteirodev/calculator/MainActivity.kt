@@ -3,7 +3,6 @@ package io.monteirodev.calculator
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         }
         isNewOperation = false
 
-        val btSelect = view as Button
         var display:String = et_display.text.toString()
         when (view.id) {
             bt_0.id -> { display = addNumber(display, "0") }
@@ -38,13 +36,16 @@ class MainActivity : AppCompatActivity() {
             bt_dot.id -> {
                 if (!display.contains(".")) display += "."
             }
-            bt_invert.id -> {
-                if (display.startsWith("-")) {
-                    display = display.substring(1)
-                } else {
-                    display = "-$display"
-                }
-            }
+        }
+        et_display.setText(display)
+    }
+
+    fun btInvertClick(view: View) {
+        var display:String = et_display.text.toString()
+        if (display.startsWith("-")) {
+            display = display.substring(1)
+        } else {
+            display = "-$display"
         }
         et_display.setText(display)
     }
@@ -54,8 +55,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun btOpClick(view: View) {
-        val btSelected = view as Button
-        when (btSelected.id) {
+        when (view.id) {
             bt_multiply.id -> operation = "*"
             bt_div.id -> operation = "/"
             bt_minus.id -> operation = "-"
@@ -71,7 +71,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun btPercentClick(view: View) {
-        et_display.setText((et_display.text.toString().toDouble() / 100).toString())
+        val result = et_display.text.toString().toDouble() / 100
+        et_display.setText(result.toString())
         isNewOperation = true
     }
 
@@ -85,7 +86,12 @@ class MainActivity : AppCompatActivity() {
             "-" -> resultNumber = oldNumber.toDouble() - newNumber.toDouble()
             "+" -> resultNumber = oldNumber.toDouble() + newNumber.toDouble()
         }
-        et_display.setText(resultNumber.toString())
+
+        var resultStr = resultNumber.toString()
+        if (resultStr.endsWith(".0")) {
+            resultStr = resultStr.removeSuffix(".0")
+        }
+        et_display.setText(resultStr)
         oldNumber = ""
         isNewOperation = true
 
