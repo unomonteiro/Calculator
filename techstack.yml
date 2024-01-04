@@ -1,7 +1,8 @@
 repo_name: unomonteiro/Calculator
 report_id: f8f49a7ae3abd006c12285725d175a37
+version: 0.1
 repo_type: Public
-timestamp: '2023-11-09T11:38:39+00:00'
+timestamp: '2024-01-04T14:52:58+00:00'
 requested_by: unomonteiro
 provider: github
 branch: master
@@ -15,6 +16,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Languages
   image_url: https://img.stackshare.io/service/3750/pCfEzr6L.png
+  detection_source_url: https://github.com/unomonteiro/Calculator
   detection_source: Repo Metadata
 - name: Android SDK
   description: An SDK that provides you the API libraries and developer tools necessary
@@ -26,7 +28,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Frameworks (Full Stack)
   image_url: https://img.stackshare.io/service/1010/m8jf0po4imu8t5eemjdd.png
-  detection_source_url: app/build.gradle
+  detection_source_url: https://github.com/unomonteiro/Calculator/blob/master/app/build.gradle
   detection_source: app/build.gradle
   last_updated_by: Carlos Monteiro
   last_updated_on: 2018-09-23 14:40:41.000000000 Z
@@ -38,6 +40,7 @@ tools:
   category: Build, Test, Deploy
   sub_category: Version Control System
   image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source_url: https://github.com/unomonteiro/Calculator
   detection_source: Repo Metadata
 - name: Gradle
   description: A powerful build system for the JVM
@@ -48,7 +51,8 @@ tools:
   category: Build, Test, Deploy
   sub_category: Java Build Tools
   image_url: https://img.stackshare.io/service/975/gradlephant-social-black-bg.png
-  detection_source: gradlew.bat
+  detection_source_url: https://github.com/unomonteiro/Calculator/blob/master/app/build.gradle
+  detection_source: app/build.gradle
   last_updated_by: Carlos Monteiro
   last_updated_on: 2018-09-23 14:40:41.000000000 Z
 - name: Android OS
@@ -60,7 +64,7 @@ tools:
   category: Languages & Frameworks
   sub_category: Operating Systems
   image_url: https://img.stackshare.io/service/9586/ZvmtaSXW_400x400.jpg
-  detection_source_url: app/build.gradle
+  detection_source_url: https://github.com/unomonteiro/Calculator/blob/master/app/build.gradle
   detection_source: app/build.gradle
   last_updated_by: Carlos Monteiro
   last_updated_on: 2018-09-23 14:40:41.000000000 Z
